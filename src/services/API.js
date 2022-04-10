@@ -1,13 +1,10 @@
 import axios from 'axios';
-import Constants from "expo-constants";
 
-const { manifest } = Constants;
+// const BASE_URL = `https://${manifest.debuggerHost.split(':').shift()}:7025/api`;
 
-//const BASE_URL = `https://${manifest.debuggerHost.split(':').shift()}:7025/api`;
+// const BASE_URL = 'http://localhost:7025/api';
 
-//const BASE_URL = 'http://localhost:7025/api';
-
-const BASE_URL = 'https://8bfd-88-119-57-203.ngrok.io/api'
+const BASE_URL = 'https://8bfd-88-119-57-203.ngrok.io/api';
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
