@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { List } from 'react-native-paper';
+import YoutubePlayer from 'react-native-youtube-iframe';
 
 function ExerciseAccordion({ exercise }) {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handlePress = () => setExpanded(!expanded);
 
@@ -15,6 +16,20 @@ function ExerciseAccordion({ exercise }) {
       <List.Item title={`Sets: ${exercise.sets}`} />
       <List.Item title={`Reps: ${exercise.reps}`} />
       <List.Item title={`Rest: ${exercise.rest}`} />
+      {exercise.description ? (
+        <List.Item
+          title="Description:"
+          description={exercise.description}
+          descriptionNumberOfLines={100}
+        />
+      ) : null}
+      {exercise.videoUrl ? (
+        <YoutubePlayer
+          height={300}
+          videoId={exercise.videoUrl
+            .substring(exercise.videoUrl.indexOf('=') + 1)}
+        />
+      ) : null}
     </List.Accordion>
   );
 }
