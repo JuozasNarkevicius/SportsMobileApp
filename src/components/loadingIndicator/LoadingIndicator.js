@@ -5,7 +5,7 @@ import styles from './styles';
 export default function LoadingIndicator() {
   return (
     <View style={styles.listFooter}>
-      <ActivityIndicator animating color="black" size="large" />
+      <ActivityIndicator animating color="white" size="large" />
     </View>
   );
 }

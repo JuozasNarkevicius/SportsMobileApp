@@ -1,6 +1,7 @@
 import React from 'react';
 import { List } from 'react-native-paper';
 import ExerciseAccordion from '../exerciseAccordion/ExerciseAccordion';
+import styles from './styles';
 
 function WorkoutAccordion({ workout }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -9,7 +10,10 @@ function WorkoutAccordion({ workout }) {
 
   return (
     <List.Accordion
+      style={styles.accordionItem}
+      titleStyle={styles.itemText}
       title={workout.name}
+      theme={{ colors: { text: styles.itemText.color } }}
       expanded={expanded}
       onPress={handlePress}
     >

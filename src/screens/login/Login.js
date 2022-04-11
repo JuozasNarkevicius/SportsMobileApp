@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Text, View, TextInput, TouchableOpacity,
+  Text, View, TextInput, TouchableOpacity, StatusBar,
 } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -33,12 +33,15 @@ function LoginScreen({ navigation }) {
         touched,
       }) => (
         <View style={styles.container}>
+          <StatusBar
+            barStyle="light-content"
+          />
           <View style={styles.inputView}>
             <TextInput
               name="email"
               style={styles.TextInput}
               placeholder="Email"
-              placeholderTextColor="#003f5c"
+              placeholderTextColor="#fff"
               onChangeText={handleChange('email')}
               onBlur={handleBlur('email')}
               value={values.email}
@@ -52,7 +55,7 @@ function LoginScreen({ navigation }) {
               name="password"
               style={styles.TextInput}
               placeholder="Password"
-              placeholderTextColor="#003f5c"
+              placeholderTextColor="#fff"
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
               value={values.password}

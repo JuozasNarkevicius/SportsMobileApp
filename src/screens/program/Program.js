@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { List } from 'react-native-paper';
 import WorkoutAccordion from '../../components/dataDisplay/workoutAccordion.js/WorkoutAccordion';
 import programService from '../../repositories/program';
@@ -27,13 +27,15 @@ function ProgramScreen({ route, navigation }) {
   }
 
   return (
-    <ScrollView style={styles.scrollView}>
-      <List.Section>
-        {program.workouts.map((workout) => (
-          <WorkoutAccordion key={workout.id} workout={workout} />
-        ))}
-      </List.Section>
-    </ScrollView>
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <List.Section>
+          {program.workouts.map((workout) => (
+            <WorkoutAccordion key={workout.id} workout={workout} />
+          ))}
+        </List.Section>
+      </ScrollView>
+    </View>
   );
 }
 

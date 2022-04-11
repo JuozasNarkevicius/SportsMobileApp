@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { List } from 'react-native-paper';
 import LoadingIndicator from '../../components/loadingIndicator/LoadingIndicator';
 import programService from '../../repositories/program';
@@ -24,21 +24,25 @@ function ProgramsListScreen({ navigation }) {
   }
 
   return (
-    <ScrollView style={styles.scrollView}>
-      <List.Section>
-        {programs.map((program) => (
-          <List.Item
-            key={program.id}
-            title={program.name}
-            onPress={() => navigation
-              .navigate('Program', {
-                programId: program.id,
-                programName: program.name,
-              })}
-          />
-        ))}
-      </List.Section>
-    </ScrollView>
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        <List.Section>
+          {programs.map((program) => (
+            <List.Item
+              style={styles.listItem}
+              titleStyle={styles.itemText}
+              key={program.id}
+              title={program.name}
+              onPress={() => navigation
+                .navigate('Program', {
+                  programId: program.id,
+                  programName: program.name,
+                })}
+            />
+          ))}
+        </List.Section>
+      </ScrollView>
+    </View>
   );
 }
 

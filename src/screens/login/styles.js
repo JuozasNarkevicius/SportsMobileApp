@@ -1,14 +1,16 @@
 import { StyleSheet } from 'react-native';
+import COLORS from '../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.BACKGROUND,
     alignItems: 'center',
     justifyContent: 'center',
   },
 
   inputView: {
+    borderColor: COLORS.TEXT,
     borderWidth: 1,
     borderRadius: 30,
     width: '70%',
@@ -23,6 +25,7 @@ const styles = StyleSheet.create({
     padding: 10,
     textAlign: 'center',
     width: '100%',
+    color: COLORS.TEXT,
   },
 
   loginBtn: {
@@ -32,11 +35,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 40,
-    backgroundColor: '#222222',
+    backgroundColor: COLORS.BUTTON,
   },
 
   loginText: {
-    color: 'white',
+    color: COLORS.TEXT,
   },
 
   errorText: {
