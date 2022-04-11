@@ -8,16 +8,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  image: {
-    marginBottom: 40,
-  },
-
   inputView: {
     borderWidth: 1,
     borderRadius: 30,
     width: '70%',
     height: 45,
-    marginBottom: 20,
+    margin: 10,
     alignItems: 'center',
   },
 
@@ -26,11 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     textAlign: 'center',
-  },
-
-  forgot_button: {
-    height: 30,
-    marginBottom: 30,
+    width: '100%',
   },
 
   loginBtn: {
@@ -45,6 +37,12 @@ const styles = StyleSheet.create({
 
   loginText: {
     color: 'white',
+  },
+
+  errorText: {
+    fontSize: 13,
+    color: 'red',
+    marginBottom: 10,
   },
 });
 
