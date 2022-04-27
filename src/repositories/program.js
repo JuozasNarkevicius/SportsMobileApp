@@ -6,13 +6,19 @@ const getProgramAPI = async (programId) => {
 };
 
 const getAllProgramsAPI = async () => {
-  const response = await API.get(`/users/${1}/programs`);
+  const response = await API.get(`/users/${1}/programs`); // fix
+  return response;
+};
+
+const getAllFollowedProgramsAPI = async () => {
+  const response = await API.get(`/users/${1}/savedPrograms`); // fix
   return response;
 };
 
 const programService = {
   getProgramAPI,
   getAllProgramsAPI,
+  getAllFollowedProgramsAPI,
 };
 
 export default programService;

@@ -1,18 +1,27 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Icon } from 'react-native-elements';
 import authenticationService from '../../repositories/authentication';
+import COLORS from '../../styles/colors';
 
 function LogoutButton() {
   const navigation = useNavigation();
 
   const handleLogoutClick = async () => {
-    navigation.navigate('Login');
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'Login' }],
+    });
     await authenticationService.logoutAPI();
   };
   return (
     <TouchableOpacity onPress={handleLogoutClick}>
-      <Text>Logout</Text>
+      <Icon
+        name="logout"
+        iconType="material"
+        iconStyle={{ color: COLORS.TEXT, fontSize: 30 }}
+      />
     </TouchableOpacity>
   );
 }

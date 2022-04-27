@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import COLORS from '../../styles/colors';
 
 const styles = StyleSheet.create({
   logoutButton: {
@@ -9,6 +10,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 40,
     backgroundColor: '#222222',
+  },
+  logoutIcon: {
+    color: COLORS.TEXT,
   },
 });
 

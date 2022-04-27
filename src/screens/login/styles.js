@@ -4,7 +4,6 @@ import COLORS from '../../styles/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.BACKGROUND,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -46,6 +45,19 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: 'red',
     marginBottom: 10,
+  },
+
+  logo: {
+    width: 350,
+    height: 150,
+    marginTop: -100,
+    marginBottom: 50,
+  },
+
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
 });
 

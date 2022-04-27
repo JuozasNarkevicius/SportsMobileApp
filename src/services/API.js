@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // const BASE_URL = 'http://localhost:7025/api';
 
-const BASE_URL = 'https://0271-88-119-57-203.ngrok.io/api';
+const BASE_URL = 'https://cc57-88-119-57-203.ngrok.io/api';
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,

@@ -32,6 +32,7 @@
         "react/jsx-props-no-spreading": 0,
         "no-shadow": 0,
         "react/prop-types": 0,
-        "react/no-unstable-nested-components": 0
+        "react/no-unstable-nested-components": 0,
+        "global-require": 0
     }
 }
