@@ -5,7 +5,7 @@ const COLORS = {
   SUB_ITEM: '#373737',
   SUB_ITEM_ITEM: '#545454',
   TEXT: '#fff',
-  BUTTON: '#CD5C5C',
+  BUTTON: '#EB5050',
 };
 
 export default COLORS;

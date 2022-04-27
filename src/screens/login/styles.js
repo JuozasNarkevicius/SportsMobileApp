@@ -48,10 +48,11 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 350,
-    height: 150,
+    width: 270,
+    height: 120,
     marginTop: -100,
     marginBottom: 50,
+    marginRight: 15,
   },
 
   image: {
