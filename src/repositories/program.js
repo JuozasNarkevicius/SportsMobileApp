@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import API from '../services/API';
 
 const getProgramAPI = async (programId) => {
@@ -6,12 +7,14 @@ const getProgramAPI = async (programId) => {
 };
 
 const getAllProgramsAPI = async () => {
-  const response = await API.get(`/users/${1}/programs`); // fix
+  const userId = await AsyncStorage.getItem('userId');
+  const response = await API.get(`/users/${userId}/programs`);
   return response;
 };
 
 const getAllFollowedProgramsAPI = async () => {
-  const response = await API.get(`/users/${1}/savedPrograms`); // fix
+  const userId = await AsyncStorage.getItem('userId');
+  const response = await API.get(`/users/${userId}/savedPrograms`);
   return response;
 };
 

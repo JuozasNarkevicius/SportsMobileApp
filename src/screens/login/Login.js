@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Text, View, TextInput, TouchableOpacity, Image, ImageBackground,
 } from 'react-native';
@@ -14,9 +14,16 @@ const validationSchema = yup.object({
 });
 
 function LoginScreen({ navigation }) {
+  const [error, setError] = useState();
   const handleLoginSubmit = async (values) => {
-    await authenticationService.loginAPI(values);
-    navigation.replace('Your programs');
+    try {
+      await authenticationService.loginAPI(values);
+      navigation.replace('Your programs');
+    } catch (error) {
+      if (error.response.data.status === 401) {
+        setError('Wrong login credentials');
+      }
+    }
   };
 
   return (
@@ -66,6 +73,7 @@ function LoginScreen({ navigation }) {
             </View>
             {(errors.password && touched.password)
          && <Text style={styles.errorText}>{errors.password}</Text>}
+            <Text style={styles.errorText}>{error}</Text>
             <TouchableOpacity style={styles.loginBtn} onPress={handleSubmit}>
               <Text style={styles.loginText}>LOGIN</Text>
             </TouchableOpacity>

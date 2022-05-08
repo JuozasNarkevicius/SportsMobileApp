@@ -3,6 +3,7 @@ import { List } from 'react-native-paper';
 import { View } from 'react-native';
 import YoutubePlayer from 'react-native-youtube-iframe';
 import styles from './styles';
+import videoService from '../../../services/video';
 
 function ExerciseAccordion({ exercise }) {
   const [expanded, setExpanded] = useState(false);
@@ -47,8 +48,7 @@ function ExerciseAccordion({ exercise }) {
         <View style={{ marginTop: 70, marginLeft: 5, marginRight: 5 }}>
           <YoutubePlayer
             height={300}
-            videoId={exercise.videoUrl
-              .substring(exercise.videoUrl.indexOf('=') + 1)}
+            videoId={videoService.getIdFromUrl(exercise.videoUrl)}
           />
         </View>
       ) : null}
